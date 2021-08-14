@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charest="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="keywords" content="小甲鱼,Web开发,HTML,CSS3,Web编程教学">
+		<meta name="description" content="《零基础入门学习Web开发》案例演示">
+		<meta name="author" content="乐途">
+		<title>每天坚持学Web</title>
+		
+	</head>
+	<body>
+		<form action="wecome.php" method="get">
+			<!--P20 input实现搜索框样式 第19讲-->
+			<label>你想看小甲鱼哪个课程：<input type="search" name="search"></label>
+			<br><br>
+			<input type="submit" value="提交">
+			<br><br>
+			<!-- input实现颜色选择框 -->
+			<label>亲爱的，选个颜色：<input type="color" name="color"></label>
+			<br><br>
+			<input type="submit" value="提交">
+			<br><br>
+			<!-- input实现图像按钮 -->
+			<label>别看我是一个图片，我还是一个按钮<input type="image" src="logo.png" alt="image"></label>
+			<br><br>
+			<!-- 隐藏input元素 -->
+			<label>要你何用按钮 -> <input type="hidden" value="你看不到我" disabled></label>
+			<br><br><br>
+		</form>
+		<form action="unload.php" method="post" enctype="multipart/form-data">
+			<!--P21 input实现文件上传 第20讲-->
+			<label>请选择您要上传的文件：<input type="file" name="file" accept="image/*"></label>
+			<br><br>
+			<input type="submit" value="提交">
+			<br><br>
+			<!-- 限制上传文件的尺寸 -->
+			<input type="hidden" name="MAX_FILE_SIZE" value="1024">
+			<label>请选择您要上传的文件：<input type="file" name="file" accept="image/*" multiple></label>
+			<br><br>
+			<input type="submit" value="提交">
+			<br><br><br>
+			<!--P22 input限制数字输入 第21讲-->
+			<label>菇凉，不知今年芳龄如何：<input type="number" name="age"></label>
+			<br><br>
+			<input type="submit" value="提交">
+			<br><br>
+			<!-- input限制数字输入范围 -->
+ 			<label>菇凉，不知今年芳龄如何：<input type="number" name="age" min="1" max="100" step="1"></label>
+			<br><br>
+			<input type="submit" value="提交">
+			<br><br>
+			<!-- input实现数值滚动条 -->
+			<label>你问我爱你有多深，我爱你有<input type="range" name="love" value="1 min="1" max="10000" step="100"> 分</label>
+			<br><br>
+			<input type="submit" value="提交">
+			<br><br>
+			<!-- input获取邮箱、电话和网址 -->
+			<label>邮箱：<input type="email" name="email" pattern="\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}"></label>
+			<br><br>
+			<label>电话：<input type="tel" name="tel" pattern="(\(\d{3,4}\)|\d{3,4}-|\s)?\d{8}"></label>
+			<br><br>
+			<label>网址：<input type="url" name="url" pattern="^((https|http)?:\/\/)[^\s]+"></label>
+			<br><br>
+			<input type="submit" value="提交">
+			<br><br><br>
+			<!--P23 在输入框中显示提示信息 第22讲-->
+			<label>邮箱：<input type="email" name="email" placeholder="仅限163和126邮箱"></label>
+			<br><br>
+			<label>电话：<input type="tel" name="tel" placeholder="仅限座机号码"></label>
+			<br><br>
+			<label>网址：<input type="url" name="url" placeholder="仅限以http和https开头的网址"></label>
+			<br><br>
+			<input type="submit" value="提示">
+			<br><br>
+			<!-- 指定输入框为必填 -->
+			<label>邮箱：<input type="email" name="email" placeholder="仅限163和126邮箱" required></label>
+			<br><br>
+			<label>电话：<input type="tel" name="tel" placeholder="仅限座机号码" required></label>
+			<br><br>
+			<label>网址：<input type="url" name="url" placeholder="仅限以http和https开头的网址" required></label>
+			<br><br>
+			<input type="submit" value="提示">
+			<br><br>
+			<!-- 指定文本框的宽度 -->
+			 <label>网址：<input type="url" name="url" placeholder="仅限以http和https开头的网址" required size="30"></label>
+			 <br><br>
+			 <input type="submit" value="提示">
+			 <br><br>
+			 <!-- 指定允许用户输入的最大字符数 -->
+			 <label>网址：<input type="url" name="url" placeholder="仅限以http和https开头的网址" required size="30" maxlength="22"></label>
+			 <br><br>
+			 <input type="submit" value="提示">
+			 <br><br>
+		</form>
+			 <!-- 在输入框中指定数据列表 -->
+		<form action="welcome.php" method="post">
+			 <label>网址：<input type="url" name="url" pattern="^((https|http)?:\/\/)[^\s]+" placeholder="仅限以http和https开头的网站" required size="30" list="urllist"></label>
+			 <br><br>
+			 <input type="submit" value="提交">
+		</form>	
+		<datalist id="urllist">
+			 <option value="https://ilovefishc.com">鱼C主页</option>
+			 <option value="https://fishc.com.cn">鱼c论坛</option>
+			 <option value="https://fishc.taobao.com">支持小甲鱼</option>
+		</datalist>
+		<br><br><br>
+		<!--P24  使用output元素显示结果  第23讲-->
+		<form oninput="x.value=parseInt(a.value)+parseInt(b.value)" action="welcome.php" method="get">
+			0<input type="range" id="a"	value="50" min="0" max="100">100 +
+			<input type="number" id="b" value="50"> =
+			<output name="x" for="a b">100</output>
+			<br><br>
+		</form>
+		<!-- 接收多行文本输入 -->
+		<form action="welcome.php" method="get">
+			<textarea name="saysth" rows="5" cols="30" wrap="off">左手一个小甲鱼，右手一个打火机，哪里不会点哪里，妈妈再也不用担心我的学习了～</textarea>
+			<br>
+			<button>提交</button>
+			<br><br>
+		</form>
+		<!--P26 将下面内容使用details元素实现 第25讲-->
+		<section>
+			<details open>
+				<summary>Web开发是什么</summary>
+				<p>很多同学可能还不明白，Web开发是什么？</p>
+				<p>
+				Web开发是一个指代网页或网站编写过程的广义术语。网页使用HTML、CSS和JavaScript编写。这些页面可能是类似于文档的简单文本和图形。页面也可以是交互式的，或显示变化的信息。编写交互式服务器页面略微复杂一些，但却可以实现更丰富的网站。如今的大多数页面都是交互式的，并提供了购物车、动态可视化甚至复杂的社交网络等现代在线服务。	
+				</p>
+			</details>
+		</section>
+		<br><br>
+		<footer>
+			Copyright　©　鱼Ｃ工作室
+		</footer>
+		<!--P27 图像映射 第26讲-->
+		<img src=pic.jpg alt="《零基础入门学c语言》" usemap="#book">
+		<map name="book">
+			<!-- circle需要提供圆心的坐标以及圆的半径 -->
+			<area shape="circle" coords="784,241,163" alt="Cup of coffee" href="https://fishc.com.cn" target="_banlk">
+			<!-- poly需要提供多边形每个点的坐标 -->
+			<area shape="poly" coords="279,230,867,549,636,975,46,655" alt="Book" href="https://item.jd.com/12573534.html target="_blank">
+			<!-- rect需要提供矩形左上角和右下角的坐标 -->
+			<area shape="rect" coords="710,818,886,1008" alt="Turtle" href="https://man.ilovefishc.com" target="_banlk">
+		</map>
+		<br><br>
+		<!-- 图像适配 -->
+		<picture>
+			<source media="(min-width: 1024px)" srcset="big.jpg">
+			<source media="(min-width: 512px)" srcset="small.jpg">
+			<img src="normal.jpg" alt="小姐姐" style="width:auto">
+		</picture>
+		<br><br>
+		<!-- 插图 -->
+		<P>国际C语言混乱代码大赛（The International Obfuscated C Code Contest）是一项国际程序设计赛事，从1984年开始，每年举办一次，目的是写出最有创意的最让人难以理解的C语言代码</P>
+		<figure>
+			<img src="pic.jpg" alt="国际c语言混乱代码大赛">
+			<figcaption>国际c语言混乱代码大赛</figcaption>
+		</figure>
+		<br><br><br>
+		<!--P28 在网页中嵌入视频 第27讲-->
+		<video src="test_video.mp4" width="640" height="352" contrds autoplay>非常抱歉，本视频由于不可抗因素，导致无法播放......</video>
+		<br><br>
+		<!-- 阻止视频预加载 -->
+		<video src="test_video.mp4" width="640" height="352" proload="none" controls>
+			非常抱歉，本视频由于不可抗因素，导致无法播放......
+		</video>
+		<br><br><br>
+		<!--P29 在网页中嵌入音频 第28讲-->
+		<audio src="ayok.mp3 controls">
+			<track scr="track.vtt" srclang="zh" label="中文字幕" kind="subtitles" default>
+			非常抱歉，本音频坑已经不在这个星球上了......
+		</audio>
+		<br><br>
+		<!-- 添加几个备胎 -->
+		<source src="ayok.mp4" type="video/mp4">
+		<source src="ayok.ogv" type="video/ogg">
+		<source src="ayok.webm" type="video/webm">
+		<video src="ayok.mp4" width="640" controls>
+		</video>
+		<br><br><br>
+		<!-- 嵌入一个网页 -->
+		<p>在网页中嵌入鱼c官网(https://ilovefishc.com)</p>
+		<iframe src="https://ilovefishc.com" width="1024px" height="800px">抱歉，您的游览器不支持iframe。</iframe>
+		<br><br>
+		<p>小姐姐，我住在这个城市，你呢？</p>
+		<!-- 嵌入百度地图，坐标：@12989872.35,2658432.29,12z -->
+		<iframe src="https://map.baidu.com/@12989872.35,2658432.29,12z width="1024px" height="800px">抱歉您的浏览器不支持iframe。</iframe>
+		<br><br>
+		<p>在网页中嵌入鱼c官网("https://fishc.com.cn")</p>
+		<!-- 使用沙盒保护网页 -->
+		<iframe src="https://fishc.com.cn" width="1024px" height="800px" sandbox="allow-popups">抱歉，您的游览器不支持iframe。</iframe>
+		<br><br>
+		<p>又到月底了，您的零花钱还剩下：</p>
+		<!-- 使用meter元素显示一个范围内的值 -->
+		<meter id="money" high="0.8" low="0.2" optimum="0.6" value="0.2" min="0" max="1"></meter>
+		<p>
+			<button type="button" value="0.1">10%</button>
+			<button type="button" value="0.6">60%</button>
+			<button type="button" value="0.9">90%</button>
+		</p>
+		<br><br>
+		<!-- 使用progress元素显示进度条 -->
+		<p>《零基础入门学习Web开发》（HTML5&CSS3）出到哪儿了啦？</p>
+		<progress max="1" value="0.4"></progress>
+	</body>
+</html>
